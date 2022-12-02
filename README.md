@@ -1,20 +1,22 @@
 
 # computer_vision
-간단한 포토샵 만들기
 
-
-
-### 현재 사이즈가 너무 커서 MainWindow.resize(1046, 804) 를 사용하여 1046, 804로 실행했을때 딱 화면에 맞을 수 있게 사이즈를 조정했습니다.
-### 그에 맞춰서 label의 크기를 통일하여 작게 줄였습니다.
-### pixmap을 다시 300,300의 사이즈로 Qt에 있는 함수를 사용하여 비율은 그대로 맞췄습니다.
-### pixmap = pixmap.scaled(QSize(300, 300), aspectMode=Qt.KeepAspectRatioByExpanding)
-
-사진 저장은 Label에서 표시하고 있는 사진 데이터를 QPixmap객체의 형태로 반환받은 후 변수에 넣어, save함수를 이용해 사진 저장하는 형식으로 받았습니다.
-
-### Save_image는 사진을 저장하는 기능으로 label_3에 있는 결과값을 Saved_image 라는 이름으로 저장해 줍니다.
-
+**사용 프로그램**
 ---
-python >- 3.9
+python                    3.9.13
+matplotlib                3.6.1
+numpy                     1.23.4
+opencv-python             4.6.0.66
+pyqt5                     5.15.7
+pyside6                   6.4.0
+pyside2                   5.15.2.1
+---
+
+* 사이즈의 크기를 MainWindow.resize(1046, 804)를 통해 사이즈 조정
+* pixmap = pixmap.scaled(QSize(300, 300), aspectMode=Qt.KeepAspectRatioByExpanding) 을 통해 비율 그대로의 사진 받기
+* label_3 사진 데이터를  QPixmap객체의 형태로 반환받은 후 변수에 넣어, save함수를 이용해 사진 저장, Saved_image 라는 이름으로 저장
+
+### 자세한 기능 설명 ###
 ---
 
 * 사진반전 (Flip_image) *
@@ -58,5 +60,28 @@ python >- 3.9
  * HSV 이미지 Hsv_image *
  
   사진을 RGB형태가 아닌 HSV 형태로 받아오기 위해 cv2를 사용했습니다.
-  
-++ 메모장은 빈공간이 맘에 안들어 만들어봤습니다. 전체적으로 글씨꼴은 함초롱바탕으로 맞췄고, 도움말 팝업창은 시도는 했으나 아직 완전히 구현못했습니다. 다음 수업때 구현해볼 생각입니다. + 라디오 버튼이 중복으로 눌리는것처럼 보이나 추후엔 박스를 하나로 통합시켜 하나만 눌리는것처럼 보이도록 할 생각입니다.
+---
+
+```python
+.
+.
+        
+    def showMessageBox(self):
+        msgBox = QMessageBox()
+        msgBox.setWindowTitle("Title")
+        msgBox.setText("Please insert image on label_3")
+        msgBox.setInformativeText("이미지를 넣어주세요.")
+        msgBox.setIcon(QMessageBox.Information)
+        msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Discard | QMessageBox.Cancel)
+        msgBox.setDefaultButton(QMessageBox.Ok)
+ 
+        result = msgBox.exec()
+        if result == QMessageBox.Ok:
+            print("OK")
+        elif result == QMessageBox.Cancel:
+            print("Cancel")
+ .
+ .
+
+```
+* 위 코드를 사용하여 사진이 없이 plus_image를 시도할시, 메시지를 뜨게 하려 하였으나, 오류로 인해 해결을 완료하지 못했습니다. 
