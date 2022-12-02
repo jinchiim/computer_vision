@@ -2,15 +2,15 @@
 # computer_vision
 
 **사용 프로그램**
----
-python                    3.9.13
-matplotlib                3.6.1
-numpy                     1.23.4
-opencv-python             4.6.0.66
-pyqt5                     5.15.7
-pyside6                   6.4.0
-pyside2                   5.15.2.1
----
+***
+python                    3.9.13    
+matplotlib                3.6.1    
+numpy                     1.23.4    
+opencv-python             4.6.0.66    
+pyqt5                     5.15.7   
+pyside6                   6.4.0   
+pyside2                   5.15.2.1   
+***
 
 * 사이즈의 크기를 MainWindow.resize(1046, 804)를 통해 사이즈 조정
 * pixmap = pixmap.scaled(QSize(300, 300), aspectMode=Qt.KeepAspectRatioByExpanding) 을 통해 비율 그대로의 사진 받기
