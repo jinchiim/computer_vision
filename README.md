@@ -59,7 +59,7 @@ pyside2                   5.15.2.1
   
  * HSV 이미지 Hsv_image *
  
-  사진을 RGB형태가 아닌 HSV 형태로 받아오기 위해 cv2를 사용했습니다.
+   사진을 RGB형태가 아닌 HSV 형태로 받아오기 위해 cv2를 사용했습니다.
 ---
 
 ```python
